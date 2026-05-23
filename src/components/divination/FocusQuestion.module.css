@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .container {
   max-width: 480px;
   margin: 0 auto;
@@ -10,7 +20,6 @@
   color: var(--ink-dark);
   margin-bottom: 1rem;
   text-align: center;
-  opacity: 0;
   animation: fadeIn 0.4s ease forwards;
 }
 
@@ -25,9 +34,8 @@
   border: var(--border-classical);
   resize: vertical;
   line-height: 1.6;
-  opacity: 0;
-  animation: slideUp 0.5s var(--ease-ink) forwards 0.15s;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+  animation: slideUp 0.5s ease forwards 0.15s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .textarea::placeholder {
@@ -43,6 +51,5 @@
 .actions {
   text-align: center;
   margin-top: 1.5rem;
-  opacity: 0;
   animation: fadeIn 0.4s ease forwards 0.3s;
 }

@@ -1,3 +1,8 @@
+@keyframes inkRipple {
+  from { transform: scale(0); opacity: 0.5; }
+  to   { transform: scale(4); opacity: 0; }
+}
+
 .button {
   position: relative;
   display: inline-flex;
@@ -10,7 +15,7 @@
   background: var(--ink-dark);
   border: 2px solid var(--ink-dark);
   cursor: pointer;
-  transition: all var(--transition-normal) var(--ease-ink);
+  transition: all 0.3s ease;
   letter-spacing: 0.1em;
   user-select: none;
   overflow: hidden;
@@ -52,7 +57,6 @@
   box-shadow: none;
 }
 
-/* Ripple */
 .ripple {
   position: absolute;
   width: 40px;
