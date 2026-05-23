@@ -9,9 +9,10 @@
 }
 
 .panel {
-  max-width: 400px;
+  max-width: 440px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
+  text-align: center;
 }
 
 /* ---- Question ---- */
@@ -149,12 +150,14 @@
 .action {
   text-align: center;
   margin-top: var(--space-lg);
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .waiting {
-  text-align: center;
   font-size: 0.85rem;
   color: var(--ink-faint);
-  margin-top: var(--space-md);
   letter-spacing: 0.04em;
 }
