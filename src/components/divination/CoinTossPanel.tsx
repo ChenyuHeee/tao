@@ -39,69 +39,69 @@ export function CoinTossPanel({ question, tosses, onToss, onComplete }: CoinToss
     <div className={styles.panel}>
       <p className={styles.question}>所问：{question}</p>
 
-      <div className={styles.counter}>
-        第 <span className={styles.counterNum}>{Math.min(count + 1, 6)}</span> / 6 次
-      </div>
-
-      {/* Coins */}
-      <div className={styles.coins}>
-        {[0, 1, 2].map(i => (
-          <Coin
-            key={`${count}-${i}`}
-            face={showResult && lastToss ? (lastToss.coins[i] ? 'yang' : 'yin') : null}
-            flipping={isFlipping}
-            revealed={showResult}
-            delay={i * 50}
-          />
-        ))}
-      </div>
-
-      {/* Result label */}
-      {lastToss && showResult && (
-        <div className={styles.resultLabel}>
-          <span className={`${lastToss.isChanging ? styles.resultNameChanging : ''} ${styles.resultName}`}>
-            {lastToss.label}{lastToss.isChanging ? ' · 变爻' : ''}
-          </span>
+      {/* Fixed-height dynamic area — button stays put */}
+      <div className={styles.stage}>
+        <div className={styles.counter}>
+          第 <span className={styles.counterNum}>{Math.min(count + 1, 6)}</span> / 6 次
         </div>
-      )}
 
-      {/* Line buildup — always rendered to prevent button shift */}
-      <div className={styles.buildup}>
-        {tosses.length > 0 && <p className={styles.buildupLabel}>已得之爻</p>}
-        {tosses.map((t, i) => (
-          <div
-            key={i}
-            className={styles.line}
-            style={{ animationDelay: `${i * 0.05}s` }}
-          >
-            {t.isChanging ? (
-              <span className={styles.lineMark}>{t.value === 6 ? '×' : '○'}</span>
-            ) : (
-              <span className={styles.lineMarkEmpty} />
-            )}
-            {t.yinOrYang === 1 ? (
-              <div className={styles.lineBar}>
-                <div className={styles.lineYang} />
-              </div>
-            ) : (
-              <div className={styles.lineBar}>
-                <div className={styles.lineYin}>
-                  <span /><span />
+        <div className={styles.coins}>
+          {[0, 1, 2].map(i => (
+            <Coin
+              key={`${count}-${i}`}
+              face={showResult && lastToss ? (lastToss.coins[i] ? 'yang' : 'yin') : null}
+              flipping={isFlipping}
+              revealed={showResult}
+              delay={i * 50}
+            />
+          ))}
+        </div>
+
+        <div className={styles.resultLabel}>
+          {lastToss && showResult && (
+            <span className={`${lastToss.isChanging ? styles.resultNameChanging : ''}`}>
+              {lastToss.label}{lastToss.isChanging ? ' · 变爻' : ''}
+            </span>
+          )}
+        </div>
+
+        <div className={styles.buildup}>
+          {tosses.length > 0 && <p className={styles.buildupLabel}>已得之爻</p>}
+          {tosses.map((t, i) => (
+            <div
+              key={i}
+              className={styles.line}
+              style={{ animationDelay: `${i * 0.05}s` }}
+            >
+              {t.isChanging ? (
+                <span className={styles.lineMark}>{t.value === 6 ? '×' : '○'}</span>
+              ) : (
+                <span className={styles.lineMarkEmpty} />
+              )}
+              {t.yinOrYang === 1 ? (
+                <div className={styles.lineBar}>
+                  <div className={styles.lineYang} />
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              ) : (
+                <div className={styles.lineBar}>
+                  <div className={styles.lineYin}>
+                    <span /><span />
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Action */}
+      {/* Action — always at the same position */}
       <div className={styles.action}>
         {count < 6 ? (
           <InkButton onClick={handleToss} disabled={isFlipping}>
             {count === 0 ? '起卦' : '继续'}
           </InkButton>
         ) : (
-          count === 6 && <div className={styles.waiting}>推演中...</div>
+          <div className={styles.waiting}>推演中...</div>
         )}
       </div>
     </div>
