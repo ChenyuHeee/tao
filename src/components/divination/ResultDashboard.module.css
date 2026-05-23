@@ -14,8 +14,29 @@
   text-align: center;
   font-size: 0.85rem;
   color: var(--ink-muted);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   letter-spacing: 0.04em;
+}
+
+.warning {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--red);
+  margin-bottom: var(--space-lg);
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(184, 83, 58, 0.15);
+  background: rgba(184, 83, 58, 0.04);
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.4s ease forwards 0.1s;
+}
+
+.warningBottom {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  margin-top: var(--space-lg);
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.4s ease forwards 1s;
 }
 
 .grid {

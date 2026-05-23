@@ -19,7 +19,11 @@ export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
 
   return (
     <div className={styles.dashboard}>
-      <p className={styles.question}>所问：{question}</p>
+      <p className={styles.question}>探讨之事：{question}</p>
+
+      <p className={styles.warning}>
+        以下内容由算法自动生成，仅供娱乐参考，不具有科学依据，请勿作为人生决策的依据。
+      </p>
 
       <div className={styles.grid}>
         <div className={styles.col}>
@@ -55,9 +59,13 @@ export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
         <InterpretationCard interpretation={interpretation} />
       </div>
 
+      <p className={styles.warningBottom}>
+        以上内容为《易经》卦爻辞的自动化解读，仅供传统文化交流及休闲娱乐参考。
+      </p>
+
       <div className={styles.actions}>
         <InkButton variant="secondary" onClick={onReset}>
-          再占一卦
+          重新推演
         </InkButton>
       </div>
     </div>

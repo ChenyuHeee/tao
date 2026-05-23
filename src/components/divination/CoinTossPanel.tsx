@@ -37,9 +37,8 @@ export function CoinTossPanel({ question, tosses, onToss, onComplete }: CoinToss
 
   return (
     <div className={styles.panel}>
-      <p className={styles.question}>所问：{question}</p>
+      <p className={styles.question}>探讨之事：{question}</p>
 
-      {/* Fixed-height dynamic area — button stays put */}
       <div className={styles.stage}>
         <div className={styles.counter}>
           第 <span className={styles.counterNum}>{Math.min(count + 1, 6)}</span> / 6 次
@@ -94,11 +93,10 @@ export function CoinTossPanel({ question, tosses, onToss, onComplete }: CoinToss
         </div>
       </div>
 
-      {/* Action — always at the same position */}
       <div className={styles.action}>
         {count < 6 ? (
           <InkButton onClick={handleToss} disabled={isFlipping}>
-            {count === 0 ? '起卦' : '继续'}
+            {count === 0 ? '摇第一爻' : '继续'}
           </InkButton>
         ) : (
           <div className={styles.waiting}>推演中...</div>

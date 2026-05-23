@@ -10,3 +10,25 @@
 .footer p {
   margin: 0;
 }
+
+.disclaimer {
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  line-height: 1.8;
+  padding-top: var(--space-sm);
+}
+
+.link {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--ink);
+}

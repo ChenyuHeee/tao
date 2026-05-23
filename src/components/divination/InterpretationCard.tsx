@@ -8,10 +8,10 @@ interface InterpretationCardProps {
 export function InterpretationCard({ interpretation }: InterpretationCardProps) {
   return (
     <div className={styles.card}>
-      <p className={styles.ruleLabel}>{interpretation.ruleLabel}</p>
+      <p className={styles.rule}>{interpretation.ruleLabel}</p>
 
-      <p className={styles.primaryText}>{interpretation.primaryText}</p>
-      <p className={styles.primarySource}>{interpretation.primarySource}</p>
+      <p className={styles.text}>{interpretation.primaryText}</p>
+      <p className={styles.source}>{interpretation.primarySource}</p>
 
       {interpretation.secondaryText && (
         <>
