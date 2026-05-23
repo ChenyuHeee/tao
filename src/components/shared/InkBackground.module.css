@@ -1,0 +1,15 @@
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107, 99, 88, 0.25), transparent);
+  animation: inkParticle var(--duration, 20s) linear infinite;
+}

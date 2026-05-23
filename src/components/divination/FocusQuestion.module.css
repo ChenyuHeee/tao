@@ -2,7 +2,6 @@
   max-width: 480px;
   margin: 0 auto;
   padding: 2rem 1rem;
-  animation: fadeIn 0.5s ease forwards;
 }
 
 .label {
@@ -11,6 +10,8 @@
   color: var(--ink-dark);
   margin-bottom: 1rem;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
 }
 
 .textarea {
@@ -24,6 +25,9 @@
   border: var(--border-classical);
   resize: vertical;
   line-height: 1.6;
+  opacity: 0;
+  animation: slideUp 0.5s var(--ease-ink) forwards 0.15s;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .textarea::placeholder {
@@ -33,9 +37,12 @@
 .textarea:focus {
   outline: none;
   border-color: var(--ink-dark);
+  box-shadow: 0 0 0 2px rgba(44, 44, 44, 0.08);
 }
 
 .actions {
   text-align: center;
   margin-top: 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards 0.3s;
 }

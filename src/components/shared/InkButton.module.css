@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -9,20 +10,34 @@
   background: var(--ink-dark);
   border: 2px solid var(--ink-dark);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all var(--transition-normal) var(--ease-ink);
   letter-spacing: 0.1em;
   user-select: none;
+  overflow: hidden;
 }
 
 .button:hover {
   background: var(--ink-black);
   border-color: var(--ink-black);
   transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 .button:active {
   transform: translateY(0);
+  transition: transform 0.05s ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
 }
 
 .secondary {
@@ -35,4 +50,20 @@
   background: rgba(0, 0, 0, 0.04);
   color: var(--ink-black);
   box-shadow: none;
+}
+
+/* Ripple */
+.ripple {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(0);
+  animation: inkRipple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+.secondary .ripple {
+  background: rgba(0, 0, 0, 0.1);
 }

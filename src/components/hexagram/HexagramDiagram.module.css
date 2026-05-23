@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   padding: 1rem;
 }
 
@@ -10,18 +10,33 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  opacity: 0;
+  animation: slideUp 0.4s var(--ease-ink) forwards;
 }
+
+.lineContainer:nth-child(1) { animation-delay: 0.05s; }
+.lineContainer:nth-child(2) { animation-delay: 0.15s; }
+.lineContainer:nth-child(3) { animation-delay: 0.25s; }
+.lineContainer:nth-child(4) { animation-delay: 0.35s; }
+.lineContainer:nth-child(5) { animation-delay: 0.45s; }
+.lineContainer:nth-child(6) { animation-delay: 0.55s; }
 
 .changeMark {
   width: 22px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--seal-red);
+  animation: pulseGlow 1.8s ease-in-out infinite;
 }
 
 .noMark {
   width: 22px;
+}
+
+.lineWrapper {
+  width: 140px;
+  overflow: hidden;
 }
 
 .lineSolid {
@@ -29,6 +44,9 @@
   height: 4px;
   background: var(--ink-dark);
   border-radius: 2px;
+  transform-origin: center;
+  animation: lineDraw 0.5s var(--ease-ink) forwards;
+  animation-delay: inherit;
 }
 
 .lineBroken {
@@ -37,11 +55,28 @@
   width: 140px;
 }
 
-.lineBroken > span {
-  width: 63px;
+.lineBrokenHalf {
   height: 4px;
   background: var(--ink-dark);
   border-radius: 2px;
+}
+
+.lineBrokenHalf:nth-child(1) {
+  width: 63px;
+  transform-origin: right center;
+  animation: lineDraw 0.5s var(--ease-ink) forwards;
+  animation-delay: inherit;
+}
+
+.lineBrokenHalf:nth-child(2) {
+  width: 63px;
+  transform-origin: left center;
+  animation: lineDraw 0.5s var(--ease-ink) forwards;
+  animation-delay: inherit;
+}
+
+.changingLine {
+  animation: changingLinePulse 1.6s ease-in-out infinite 0.6s;
 }
 
 .lineLabel {
@@ -49,4 +84,7 @@
   color: var(--ink-gray);
   width: 36px;
   text-align: right;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: calc(inherit + 0.3s);
 }

@@ -11,6 +11,8 @@
   --seal-red: #c23b22;
   --seal-red-light: #e0503a;
   --gold: #c9a94e;
+  --gold-dark: #a88a3a;
+  --gold-light: #e8d080;
 
   --yang-color: #1a1a1a;
   --yin-color: #f5f0e8;
@@ -23,4 +25,11 @@
   --line-height: 1.8;
   --max-width: 720px;
   --border-classical: 1px solid #8b7d6b;
+
+  /* Timing */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.4s;
+  --transition-slow: 0.8s;
+  --ease-ink: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }

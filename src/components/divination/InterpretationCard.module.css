@@ -1,7 +1,7 @@
 .card {
   border: var(--border-classical);
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.35);
   margin-top: 1rem;
 }
 
@@ -35,6 +35,7 @@
   height: 1px;
   background: var(--ink-light);
   margin: 1rem auto;
+  position: relative;
 }
 
 .secondaryText {

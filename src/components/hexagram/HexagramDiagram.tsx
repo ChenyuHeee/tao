@@ -18,18 +18,26 @@ export function HexagramDiagram({ hexagram, changingLineIndices = [], showLabels
         return (
           <div key={actualIndex} className={styles.lineContainer}>
             {isChanging ? (
-              <span className={styles.changeMark}>{isYang ? '○' : '×'}</span>
+              <span className={styles.changeMark}>
+                {isYang ? '○' : '×'}
+              </span>
             ) : (
               <span className={styles.noMark} />
             )}
+
             {isYang ? (
-              <div className={styles.lineSolid} />
+              <div className={`${styles.lineWrapper} ${isChanging ? styles.changingLine : ''}`}>
+                <div className={styles.lineSolid} />
+              </div>
             ) : (
-              <div className={styles.lineBroken}>
-                <span />
-                <span />
+              <div className={`${styles.lineWrapper} ${isChanging ? styles.changingLine : ''}`}>
+                <div className={styles.lineBroken}>
+                  <span className={styles.lineBrokenHalf} />
+                  <span className={styles.lineBrokenHalf} />
+                </div>
               </div>
             )}
+
             {showLabels && (
               <span className={styles.lineLabel}>{line.name}</span>
             )}

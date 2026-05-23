@@ -14,82 +14,145 @@
   border-bottom: 1px solid rgba(139, 125, 107, 0.3);
 }
 
+/* ---- Counter ---- */
+
 .counter {
   text-align: center;
   font-size: 1rem;
   color: var(--ink-gray);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.current {
-  font-size: 1.8rem;
+.counterCurrent {
+  font-size: 2rem;
   font-weight: 700;
   color: var(--ink-black);
+  transition: color var(--transition-normal);
 }
 
-.separator {
+.counterSep {
   color: var(--ink-light);
   margin: 0 0.25rem;
 }
 
-.coinArea {
+.counterTotal {
+  color: var(--ink-gray);
+}
+
+/* ---- 3D Coin Stage ---- */
+
+.coinStage {
+  perspective: 600px;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  min-height: 80px;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  min-height: 90px;
   align-items: center;
 }
 
-.coin {
-  width: 60px;
-  height: 60px;
+/* ---- Single 3D Coin ---- */
+
+.coin3d {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+.coinInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
+}
+
+.flipping .coinInner {
+  animation: coinFlip3D 0.8s var(--ease-ink) forwards;
+}
+
+.coinFace3d {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  font-weight: 700;
-  border: 2px solid var(--ink-dark);
-  transition: transform 0.8s ease;
-  perspective: 800px;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: 2px solid var(--gold-dark);
+  background: radial-gradient(circle at 40% 35%,
+    var(--gold-light) 0%,
+    var(--gold) 40%,
+    var(--gold-dark) 100%);
 }
 
-.coinFace {
+.coinFront {
+  color: var(--ink-dark);
+}
+
+.coinBack {
+  color: var(--ink-dark);
+  transform: rotateY(180deg);
+}
+
+.coinResult {
+  position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gold);
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: radial-gradient(circle at 40% 35%,
+    var(--gold-light) 0%,
+    var(--gold) 40%,
+    var(--gold-dark) 100%);
+  border: 2px solid var(--gold-dark);
   color: var(--ink-dark);
-  font-size: 1.2rem;
-  font-weight: 700;
+  animation: stampIn 0.3s var(--ease-bounce) forwards;
 }
 
-.flipping {
-  animation: coinFlip 0.8s ease;
+.coinResultYang {
+  box-shadow: 0 0 6px rgba(201, 169, 78, 0.5);
 }
 
-.resultLabel {
+.coinResultYin {
+  box-shadow: 0 0 6px rgba(139, 125, 107, 0.4);
+}
+
+/* ---- Toss Result Label ---- */
+
+.tossResult {
   text-align: center;
   margin-bottom: 1.5rem;
+  animation: fadeIn 0.4s ease forwards;
 }
 
-.resultSymbol {
+.tossSymbol {
   font-size: 2rem;
   font-weight: 700;
   color: var(--ink-black);
   font-family: var(--font-body);
 }
 
-.resultName {
+.tossName {
   display: block;
   font-size: 0.95rem;
   color: var(--ink-gray);
   margin-top: 0.25rem;
 }
+
+.tossChanging {
+  color: var(--seal-red);
+}
+
+/* ---- Line Buildup ---- */
 
 .buildup {
   margin-bottom: 2rem;
@@ -99,7 +162,7 @@
   font-size: 0.85rem;
   color: var(--ink-gray);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .lineRow {
@@ -107,46 +170,71 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.3rem 0;
-  animation: slideUp 0.3s ease both;
+  padding: 0.35rem 0;
 }
 
-.lineBar {
-  height: 4px;
-  background: var(--ink-dark);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+.lineInitial {
+  opacity: 0;
+  animation: slideUp 0.35s var(--ease-ink) forwards;
+}
+
+.lineYinOrYang {
+  width: 120px;
+  overflow: hidden;
 }
 
 .lineBarSolid {
   width: 120px;
+  height: 4px;
+  background: var(--ink-dark);
+  border-radius: 2px;
+  transform-origin: center;
+  animation: lineDraw 0.4s var(--ease-ink) forwards;
 }
 
 .lineBarBroken {
   display: flex;
   gap: 12px;
+  width: 120px;
 }
 
 .lineBarBroken > span {
-  width: 54px;
   height: 4px;
   background: var(--ink-dark);
   border-radius: 2px;
 }
 
-.lineChanging {
-  color: var(--seal-red);
-  font-size: 0.85rem;
-  font-weight: 700;
-  width: 24px;
+.lineBarBroken > span:first-child {
+  width: 54px;
+  transform-origin: right center;
+  animation: lineDraw 0.4s var(--ease-ink) forwards;
+}
+
+.lineBarBroken > span:last-child {
+  width: 54px;
+  transform-origin: left center;
+  animation: lineDraw 0.4s var(--ease-ink) forwards;
+}
+
+.lineChangeMark {
+  width: 22px;
   text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--seal-red);
 }
 
-.lineStable {
-  width: 24px;
+.lineChangeMarkPulse {
+  animation: pulseGlow 1.5s ease-in-out infinite;
 }
 
-.tossButton {
+.lineStableMark {
+  width: 22px;
+}
+
+/* ---- Toss Action ---- */
+
+.tossAction {
   text-align: center;
   margin-top: 1rem;
 }
