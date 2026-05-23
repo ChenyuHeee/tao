@@ -9,7 +9,7 @@
 }
 
 .panel {
-  max-width: 440px;
+  max-width: 520px;
   margin: 0 auto;
   padding: var(--space-lg) var(--space-md);
   text-align: center;
@@ -101,12 +101,12 @@
 }
 
 .lineBar {
-  width: 100px;
+  width: 130px;
   overflow: hidden;
 }
 
 .lineYang {
-  width: 100px;
+  width: 130px;
   height: 2px;
   background: var(--ink);
   transform-origin: center;
@@ -116,7 +116,7 @@
 .lineYin {
   display: flex;
   gap: 10px;
-  width: 100px;
+  width: 130px;
 }
 
 .lineYin span {
@@ -125,13 +125,13 @@
 }
 
 .lineYin span:first-child {
-  width: 45px;
+  width: 60px;
   transform-origin: right center;
   animation: lineReveal 0.4s ease forwards;
 }
 
 .lineYin span:last-child {
-  width: 45px;
+  width: 60px;
   transform-origin: left center;
   animation: lineReveal 0.4s ease forwards;
 }

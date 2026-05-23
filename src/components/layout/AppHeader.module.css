@@ -1,6 +1,6 @@
 .header {
   text-align: center;
-  padding: var(--space-2xl) var(--space-md) var(--space-lg);
+  padding: var(--space-xl) var(--space-md) var(--space-md);
 }
 
 .title {

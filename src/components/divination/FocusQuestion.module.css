@@ -4,9 +4,9 @@
 }
 
 .container {
-  max-width: 440px;
+  max-width: 520px;
   margin: 0 auto;
-  padding: var(--space-2xl) var(--space-md);
+  padding: var(--space-xl) var(--space-md);
   text-align: center;
 }
 

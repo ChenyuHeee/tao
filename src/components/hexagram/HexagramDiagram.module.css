@@ -49,12 +49,12 @@
 }
 
 .lineWrap {
-  width: 120px;
+  width: 160px;
   overflow: hidden;
 }
 
 .lineYang {
-  width: 120px;
+  width: 160px;
   height: 2.5px;
   background: var(--ink);
   transform-origin: center;
@@ -65,7 +65,7 @@
 .lineYin {
   display: flex;
   gap: 12px;
-  width: 120px;
+  width: 160px;
 }
 
 .lineYinHalf {
@@ -74,14 +74,14 @@
 }
 
 .lineYinHalf:first-child {
-  width: 54px;
+  width: 74px;
   transform-origin: right center;
   animation: drawLine 0.45s ease forwards;
   animation-delay: inherit;
 }
 
 .lineYinHalf:last-child {
-  width: 54px;
+  width: 74px;
   transform-origin: left center;
   animation: drawLine 0.45s ease forwards;
   animation-delay: inherit;
