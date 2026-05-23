@@ -1,6 +1,11 @@
 @keyframes ripple {
-  from { transform: translate(-50%, -50%) scale(0); opacity: 0.25; }
-  to   { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+  from { transform: translate(-50%, -50%) scale(0); opacity: 0.2; }
+  to   { transform: translate(-50%, -50%) scale(4.5); opacity: 0; }
+}
+
+@keyframes buttonFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .button {
@@ -9,31 +14,31 @@
   align-items: center;
   justify-content: center;
   min-width: 120px;
-  padding: 0.55rem 2.2rem;
-  font-size: 0.95rem;
+  padding: 0.5rem 2rem;
+  font-size: 0.92rem;
   font-family: var(--font-text);
-  color: var(--bg-paper);
+  color: var(--bg-silk);
   background: var(--ink);
   border: 1.5px solid var(--ink);
   cursor: pointer;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   user-select: none;
   overflow: hidden;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.3s ease;
+  animation: buttonFade 0.4s ease forwards;
 }
 
 .button:hover {
-  background: #1a1612;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  background: #15120e;
 }
 
 .button:active {
-  background: #0f0d0a;
+  background: #0a0806;
   transition: background 0.05s;
 }
 
 .button:disabled {
-  opacity: 0.45;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -43,7 +48,7 @@
 }
 
 .secondary:hover {
-  background: rgba(42, 36, 30, 0.04);
+  background: rgba(31, 27, 22, 0.05);
 }
 
 .content {
@@ -51,18 +56,17 @@
   z-index: 1;
 }
 
-/* Ripple */
 .ripple {
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   transform: translate(-50%, -50%) scale(0);
-  animation: ripple 0.65s ease-out forwards;
+  animation: ripple 0.7s ease-out forwards;
   pointer-events: none;
 }
 
 .secondary .ripple {
-  background: rgba(42, 36, 30, 0.08);
+  background: rgba(31, 27, 22, 0.06);
 }

@@ -12,25 +12,24 @@
 
 .label {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   color: var(--ink-soft);
   margin-bottom: var(--space-md);
-  text-align: center;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   animation: fadeUp 0.4s ease forwards;
 }
 
 .textarea {
   width: 100%;
-  min-height: 88px;
+  min-height: 84px;
   padding: var(--space-md);
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   font-family: var(--font-text);
   color: var(--ink);
-  background: var(--bg-paper);
+  background: var(--bg-silk);
   border: var(--border);
   resize: vertical;
-  line-height: 1.7;
+  line-height: 1.8;
   animation: fadeUp 0.5s ease forwards 0.15s;
   transition: border-color 0.3s;
 }
@@ -45,7 +44,6 @@
 }
 
 .action {
-  text-align: center;
   margin-top: var(--space-lg);
   animation: fadeUp 0.4s ease forwards 0.3s;
 }

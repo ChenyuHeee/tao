@@ -1,10 +1,10 @@
 .footer {
   text-align: center;
   padding: var(--space-lg) var(--space-md);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink-faint);
   letter-spacing: 0.06em;
-  line-height: 2;
+  line-height: 2.2;
 }
 
 .footer p {
@@ -12,18 +12,19 @@
 }
 
 .disclaimer {
-  max-width: 480px;
+  max-width: 460px;
   margin: 0 auto;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--ink-faint);
-  line-height: 1.8;
+  line-height: 1.9;
   padding-top: var(--space-sm);
 }
 
 .link {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink-muted);
   text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
   letter-spacing: 0.06em;
   transition: color 0.2s;

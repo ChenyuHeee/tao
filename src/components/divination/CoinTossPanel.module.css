@@ -3,9 +3,9 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes lineReveal {
-  from { transform: scaleX(0); opacity: 0; }
-  to   { transform: scaleX(1); opacity: 1; }
+@keyframes inkBleed {
+  from { transform: scaleX(0); opacity: 0; filter: blur(3px); }
+  to   { transform: scaleX(1); opacity: 1; filter: blur(0); }
 }
 
 .panel {
@@ -16,67 +16,62 @@
 }
 
 .question {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--ink-muted);
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-md);
-  border-bottom: 1px solid rgba(42, 36, 30, 0.08);
-  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(31, 27, 22, 0.07);
+  letter-spacing: 0.05em;
 }
 
-/* ---- Fixed-height stage wraps all dynamic content ---- */
 .stage {
   height: 340px;
   overflow: hidden;
 }
 
-/* ---- Counter ---- */
 .counter {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-muted);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin-bottom: var(--space-md);
 }
 
 .counterNum {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 400;
   color: var(--ink);
-  font-family: var(--font-display);
+  font-family: var(--font-brush);
 }
 
-/* ---- Coins ---- */
 .coins {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-bottom: var(--space-md);
   height: 72px;
   align-items: center;
 }
 
-/* ---- Result label ---- */
 .resultLabel {
   height: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-md);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--ink-muted);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .resultNameChanging {
   color: var(--red);
 }
 
-/* ---- Lines ---- */
 .buildupLabel {
   font-size: 0.7rem;
   color: var(--ink-faint);
   margin-bottom: var(--space-sm);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 .line {
@@ -84,7 +79,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  padding: 0.2rem 0;
+  padding: 0.18rem 0;
   animation: fadeUp 0.35s ease forwards;
 }
 
@@ -92,7 +87,7 @@
   width: 18px;
   text-align: center;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--red);
 }
 
@@ -107,10 +102,11 @@
 
 .lineYang {
   width: 130px;
-  height: 2px;
+  height: 2.5px;
   background: var(--ink);
+  border-radius: 1.25px;
   transform-origin: center;
-  animation: lineReveal 0.4s ease forwards;
+  animation: inkBleed 0.5s ease forwards;
 }
 
 .lineYin {
@@ -120,23 +116,23 @@
 }
 
 .lineYin span {
-  height: 2px;
+  height: 2.5px;
   background: var(--ink);
+  border-radius: 1.25px;
 }
 
 .lineYin span:first-child {
   width: 60px;
   transform-origin: right center;
-  animation: lineReveal 0.4s ease forwards;
+  animation: inkBleed 0.5s ease forwards;
 }
 
 .lineYin span:last-child {
   width: 60px;
   transform-origin: left center;
-  animation: lineReveal 0.4s ease forwards;
+  animation: inkBleed 0.5s ease forwards;
 }
 
-/* ---- Action ---- */
 .action {
   margin-top: var(--space-md);
   height: 42px;
@@ -148,5 +144,5 @@
 .waiting {
   font-size: 0.85rem;
   color: var(--ink-faint);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }

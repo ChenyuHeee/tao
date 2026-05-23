@@ -11,20 +11,19 @@
 }
 
 .banner {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--ink-muted);
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
   margin-bottom: var(--space-lg);
-  border: 1px solid rgba(184, 83, 58, 0.15);
-  background: rgba(184, 83, 58, 0.04);
-  border-radius: 1px;
-  letter-spacing: 0.04em;
+  border: 1px solid rgba(155, 67, 48, 0.1);
+  background: var(--red-faded);
+  letter-spacing: 0.05em;
   animation: fadeUp 0.5s ease forwards;
 }
 
 .text {
-  font-size: 0.95rem;
-  line-height: 2;
+  font-size: 0.93rem;
+  line-height: 2.1;
   color: var(--ink-muted);
   margin-bottom: var(--space-xl);
   text-align: left;

@@ -7,19 +7,19 @@
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--ink);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   margin-bottom: 0.15rem;
 }
 
 .meta {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink-muted);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .symbols {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--ink-muted);
-  margin-top: 0.2rem;
-  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+  letter-spacing: 0.1em;
 }
