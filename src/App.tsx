@@ -1,5 +1,4 @@
 import { useDivination } from './hooks/useDivination';
-import { InkBackground } from './components/shared/InkBackground';
 import { AppHeader } from './components/layout/AppHeader';
 import { AppFooter } from './components/layout/AppFooter';
 import { WelcomeView } from './components/divination/WelcomeView';
@@ -12,30 +11,23 @@ export default function App() {
 
   return (
     <>
-      <InkBackground />
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <AppHeader />
-        <main>
-          {state.phase === 'welcome' && (
-            <WelcomeView onStart={start} />
-          )}
-          {state.phase === 'focusing' && (
-            <FocusQuestion onSubmit={setQuestion} />
-          )}
-          {state.phase === 'tossing' && (
-            <CoinTossPanel
-              question={state.question}
-              tosses={state.tosses}
-              onToss={toss}
-              onComplete={complete}
-            />
-          )}
-          {state.phase === 'result' && (
-            <ResultDashboard state={state} onReset={reset} />
-          )}
-        </main>
-        <AppFooter />
-      </div>
+      <AppHeader />
+      <main>
+        {state.phase === 'welcome' && <WelcomeView onStart={start} />}
+        {state.phase === 'focusing' && <FocusQuestion onSubmit={setQuestion} />}
+        {state.phase === 'tossing' && (
+          <CoinTossPanel
+            question={state.question}
+            tosses={state.tosses}
+            onToss={toss}
+            onComplete={complete}
+          />
+        )}
+        {state.phase === 'result' && (
+          <ResultDashboard state={state} onReset={reset} />
+        )}
+      </main>
+      <AppFooter />
     </>
   );
 }

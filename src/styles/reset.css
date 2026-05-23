@@ -6,29 +6,37 @@
   padding: 0;
 }
 
+html {
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-family: var(--font-body);
-  line-height: var(--line-height);
-  color: var(--ink-dark);
-  background-color: var(--bg-parchment);
+  font-family: var(--font-text);
+  line-height: 1.75;
+  color: var(--ink-soft);
+  background: var(--bg-paper);
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(139, 125, 107, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(200, 180, 150, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 30% 10%, rgba(180, 160, 130, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 90%, rgba(160, 140, 110, 0.04) 0%, transparent 50%);
   min-height: 100vh;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+  font-family: var(--font-text);
   font-weight: 600;
+  color: var(--ink);
   line-height: 1.4;
 }
 
 button {
-  font-family: var(--font-body);
+  font-family: var(--font-text);
   cursor: pointer;
   border: none;
+  background: none;
 }
 
 textarea {
-  font-family: var(--font-body);
+  font-family: var(--font-text);
 }

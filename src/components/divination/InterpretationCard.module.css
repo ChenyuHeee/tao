@@ -1,54 +1,54 @@
 .card {
-  border: var(--border-classical);
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.35);
-  margin-top: 1rem;
+  border: var(--border);
+  padding: var(--space-lg);
+  background: var(--bg-card);
 }
 
-.ruleLabel {
+.rule {
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(42, 36, 30, 0.08);
+}
+
+.text {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--ink);
+  text-align: center;
+  padding: var(--space-sm) 0;
+}
+
+.source {
   font-size: 0.8rem;
-  color: var(--seal-red);
-  letter-spacing: 0.05em;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(139, 125, 107, 0.3);
+  color: var(--ink-muted);
   text-align: center;
-}
-
-.primaryText {
-  font-size: 1.15rem;
-  color: var(--ink-black);
-  line-height: 1.8;
-  text-align: center;
-  padding: 0.5rem 0;
-}
-
-.primarySource {
-  font-size: 0.85rem;
-  color: var(--ink-gray);
-  text-align: center;
-  margin-top: 0.5rem;
+  margin-top: var(--space-sm);
+  letter-spacing: 0.04em;
 }
 
 .divider {
-  width: 40px;
+  width: 32px;
   height: 1px;
-  background: var(--ink-light);
-  margin: 1rem auto;
-  position: relative;
+  background: rgba(42, 36, 30, 0.15);
+  margin: var(--space-md) auto;
 }
 
 .secondaryText {
-  font-size: 1rem;
-  color: var(--ink-dark);
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--ink-soft);
   text-align: center;
-  padding: 0.5rem 0;
+  padding: var(--space-sm) 0;
 }
 
 .secondarySource {
-  font-size: 0.8rem;
-  color: var(--ink-light);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
   text-align: center;
-  margin-top: 0.3rem;
+  margin-top: var(--space-xs);
+  letter-spacing: 0.04em;
 }

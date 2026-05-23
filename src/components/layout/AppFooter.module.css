@@ -1,11 +1,12 @@
 .footer {
   text-align: center;
-  padding: 2rem 1rem;
-  color: var(--ink-light);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  padding: var(--space-2xl) var(--space-md);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  line-height: 2;
 }
 
 .footer p {
-  margin-bottom: 0.3rem;
+  margin: 0;
 }

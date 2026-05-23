@@ -1,55 +1,50 @@
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(24px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .container {
-  max-width: 480px;
+  max-width: 440px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: var(--space-2xl) var(--space-md);
 }
 
 .label {
   display: block;
-  font-size: 1.05rem;
-  color: var(--ink-dark);
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-md);
   text-align: center;
-  animation: fadeIn 0.4s ease forwards;
+  letter-spacing: 0.04em;
+  animation: fadeUp 0.4s ease forwards;
 }
 
 .textarea {
   width: 100%;
-  min-height: 100px;
-  padding: 1rem;
-  font-size: 1rem;
-  font-family: var(--font-body);
-  color: var(--ink-dark);
-  background: var(--bg-parchment);
-  border: var(--border-classical);
+  min-height: 88px;
+  padding: var(--space-md);
+  font-size: 0.95rem;
+  font-family: var(--font-text);
+  color: var(--ink);
+  background: var(--bg-paper);
+  border: var(--border);
   resize: vertical;
-  line-height: 1.6;
-  animation: slideUp 0.5s ease forwards 0.15s;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  line-height: 1.7;
+  animation: fadeUp 0.5s ease forwards 0.15s;
+  transition: border-color 0.3s;
 }
 
 .textarea::placeholder {
-  color: var(--ink-light);
+  color: var(--ink-faint);
 }
 
 .textarea:focus {
   outline: none;
-  border-color: var(--ink-dark);
-  box-shadow: 0 0 0 2px rgba(44, 44, 44, 0.08);
+  border-color: var(--ink-muted);
 }
 
-.actions {
+.action {
   text-align: center;
-  margin-top: 1.5rem;
-  animation: fadeIn 0.4s ease forwards 0.3s;
+  margin-top: var(--space-lg);
+  animation: fadeUp 0.4s ease forwards 0.3s;
 }

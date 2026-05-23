@@ -22,8 +22,8 @@ export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
       <p className={styles.question}>所问：{question}</p>
 
       <div className={styles.grid}>
-        <div className={styles.column}>
-          <p className={styles.columnLabel}>本 卦</p>
+        <div className={styles.col}>
+          <p className={styles.colLabel}>本 卦</p>
           <HexagramInfo hexagram={benGua} />
           <HexagramDiagram
             hexagram={benGua}
@@ -32,32 +32,33 @@ export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
         </div>
 
         {hasChange ? (
-          <>
-            <div className={styles.arrowWrap}>
-              <span className={styles.arrow}>→</span>
-            </div>
-            <div className={styles.column}>
-              <p className={styles.columnLabel}>之 卦</p>
-              <HexagramInfo hexagram={zhiGua} />
-              <HexagramDiagram hexagram={zhiGua} />
-            </div>
-          </>
+          <div className={styles.col}>
+            <p className={styles.colLabel}>之 卦</p>
+            <HexagramInfo hexagram={zhiGua} />
+            <HexagramDiagram hexagram={zhiGua} />
+          </div>
         ) : (
-          <div className={styles.column}>
-            <p className={styles.columnLabel}>六爻不变</p>
-            <p style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--ink-gray)', padding: '2rem 0' }}>
-              无变爻，事态稳定
-            </p>
+          <div className={styles.col}>
+            <p className={styles.colLabel}>之 卦</p>
+            <div className={styles.stableNote}>无变爻</div>
           </div>
         )}
       </div>
 
-      <div className={styles.interpWrap}>
+      {hasChange && (
+        <div className={styles.arrow}>
+          <span>→</span>
+        </div>
+      )}
+
+      <div className={styles.interp}>
         <InterpretationCard interpretation={interpretation} />
       </div>
 
       <div className={styles.actions}>
-        <InkButton onClick={onReset}>再占一卦</InkButton>
+        <InkButton variant="secondary" onClick={onReset}>
+          再占一卦
+        </InkButton>
       </div>
     </div>
   );

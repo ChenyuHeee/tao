@@ -1,19 +1,16 @@
 @import './styles/fonts.css';
 @import './styles/variables.css';
 @import './styles/reset.css';
-@import './styles/animations.css';
 
 #root {
-  max-width: var(--max-width);
+  max-width: var(--measure);
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
-  z-index: 1;
 }
 
 main {
   flex: 1;
-  padding: 0 1rem;
+  padding: 0 var(--space-md);
 }
