@@ -65,36 +65,34 @@ export function CoinTossPanel({ question, tosses, onToss, onComplete }: CoinToss
         </div>
       )}
 
-      {/* Line buildup */}
-      {tosses.length > 0 && (
-        <div className={styles.buildup}>
-          <p className={styles.buildupLabel}>已得之爻</p>
-          {tosses.map((t, i) => (
-            <div
-              key={i}
-              className={styles.line}
-              style={{ animationDelay: `${i * 0.05}s` }}
-            >
-              {t.isChanging ? (
-                <span className={styles.lineMark}>{t.value === 6 ? '×' : '○'}</span>
-              ) : (
-                <span className={styles.lineMarkEmpty} />
-              )}
-              {t.yinOrYang === 1 ? (
-                <div className={styles.lineBar}>
-                  <div className={styles.lineYang} />
+      {/* Line buildup — always rendered to prevent button shift */}
+      <div className={styles.buildup}>
+        {tosses.length > 0 && <p className={styles.buildupLabel}>已得之爻</p>}
+        {tosses.map((t, i) => (
+          <div
+            key={i}
+            className={styles.line}
+            style={{ animationDelay: `${i * 0.05}s` }}
+          >
+            {t.isChanging ? (
+              <span className={styles.lineMark}>{t.value === 6 ? '×' : '○'}</span>
+            ) : (
+              <span className={styles.lineMarkEmpty} />
+            )}
+            {t.yinOrYang === 1 ? (
+              <div className={styles.lineBar}>
+                <div className={styles.lineYang} />
+              </div>
+            ) : (
+              <div className={styles.lineBar}>
+                <div className={styles.lineYin}>
+                  <span /><span />
                 </div>
-              ) : (
-                <div className={styles.lineBar}>
-                  <div className={styles.lineYin}>
-                    <span /><span />
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
 
       {/* Action */}
       <div className={styles.action}>
