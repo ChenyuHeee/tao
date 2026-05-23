@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: var(--line-height);
+  color: var(--ink-dark);
+  background-color: var(--bg-parchment);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(139, 125, 107, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(200, 180, 150, 0.06) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+}
+
+textarea {
+  font-family: var(--font-body);
+}

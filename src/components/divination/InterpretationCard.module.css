@@ -1,0 +1,53 @@
+.card {
+  border: var(--border-classical);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  margin-top: 1rem;
+}
+
+.ruleLabel {
+  font-size: 0.8rem;
+  color: var(--seal-red);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(139, 125, 107, 0.3);
+  text-align: center;
+}
+
+.primaryText {
+  font-size: 1.15rem;
+  color: var(--ink-black);
+  line-height: 1.8;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.primarySource {
+  font-size: 0.85rem;
+  color: var(--ink-gray);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--ink-light);
+  margin: 1rem auto;
+}
+
+.secondaryText {
+  font-size: 1rem;
+  color: var(--ink-dark);
+  line-height: 1.8;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.secondarySource {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 0.3rem;
+}

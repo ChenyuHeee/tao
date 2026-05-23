@@ -1,0 +1,41 @@
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.label {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--ink-dark);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--ink-dark);
+  background: var(--bg-parchment);
+  border: var(--border-classical);
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.textarea::placeholder {
+  color: var(--ink-light);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--ink-dark);
+}
+
+.actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
