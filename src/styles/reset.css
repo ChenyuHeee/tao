@@ -32,36 +32,35 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
   background-image:
     /* Silk weave — horizontal threads */
     repeating-linear-gradient(
       0deg,
       transparent,
       transparent 2px,
-      rgba(31, 27, 22, 0.018) 2px,
-      rgba(31, 27, 22, 0.018) 3px
+      rgba(31, 27, 22, 0.04) 2px,
+      rgba(31, 27, 22, 0.04) 3px
     ),
     /* Silk weave — vertical threads */
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
-      rgba(31, 27, 22, 0.012) 2px,
-      rgba(31, 27, 22, 0.012) 3px
+      rgba(31, 27, 22, 0.025) 2px,
+      rgba(31, 27, 22, 0.025) 3px
     ),
-    /* Warm parchment tone — upper left */
-    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(180, 150, 110, 0.12) 0%, transparent 70%),
+    /* Warm parchment patina — upper left */
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(180, 150, 110, 0.25) 0%, transparent 70%),
     /* Cool ink wash — upper right */
-    radial-gradient(ellipse 500px 350px at 80% 5%, rgba(31, 27, 22, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 350px at 80% 5%, rgba(31, 27, 22, 0.10) 0%, transparent 70%),
     /* Deep ink stain — mid left */
-    radial-gradient(ellipse 300px 250px at 10% 55%, rgba(31, 27, 22, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 250px at 10% 55%, rgba(31, 27, 22, 0.08) 0%, transparent 70%),
     /* Warm wash — lower right */
-    radial-gradient(ellipse 450px 300px at 85% 75%, rgba(160, 140, 110, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 450px 300px at 85% 75%, rgba(160, 140, 110, 0.15) 0%, transparent 65%),
     /* Faint ink drop — center */
-    radial-gradient(circle 200px at 55% 40%, rgba(31, 27, 22, 0.03) 0%, transparent 60%),
+    radial-gradient(circle 200px at 55% 40%, rgba(31, 27, 22, 0.06) 0%, transparent 60%),
     /* Another ink bloom — lower center */
-    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.025) 0%, transparent 55%);
+    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.05) 0%, transparent 55%);
 }
 
 /*
@@ -75,17 +74,16 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.22;
   background-image:
     /* Far layer — soft, distant peaks */
-    radial-gradient(ellipse 120% 180px at 15% 100%, rgba(31, 27, 22, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 90% 140px at 55% 100%, rgba(31, 27, 22, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 150px at 85% 100%, rgba(31, 27, 22, 0.07) 0%, transparent 58%),
+    radial-gradient(ellipse 120% 180px at 15% 100%, rgba(31, 27, 22, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 90% 140px at 55% 100%, rgba(31, 27, 22, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 150px at 85% 100%, rgba(31, 27, 22, 0.10) 0%, transparent 58%),
     /* Near layer — slightly darker, overlapping hills */
-    radial-gradient(ellipse 70% 100px at 30% 100%, rgba(31, 27, 22, 0.10) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 110px at 65% 100%, rgba(31, 27, 22, 0.08) 0%, transparent 52%),
+    radial-gradient(ellipse 70% 100px at 30% 100%, rgba(31, 27, 22, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 110px at 65% 100%, rgba(31, 27, 22, 0.12) 0%, transparent 52%),
     /* Mist layer — soft horizontal haze */
-    linear-gradient(to top, rgba(242, 237, 226, 0.5) 0%, transparent 40%);
+    linear-gradient(to top, rgba(242, 237, 226, 0.6) 0%, transparent 40%);
 }
 
 h1, h2, h3, h4 {
