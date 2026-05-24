@@ -11,11 +11,20 @@
   margin: 0;
 }
 
-.disclaimer {
+.authorNote {
+  max-width: 520px;
+  margin: 0 auto;
   font-size: 0.68rem;
   color: var(--ink-faint);
   line-height: 1.9;
   padding-top: var(--space-sm);
+}
+
+.disclaimer {
+  font-size: 0.68rem;
+  color: var(--ink-faint);
+  line-height: 1.9;
+  padding-top: var(--space-xs);
 }
 
 .link {
