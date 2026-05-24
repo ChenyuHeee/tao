@@ -3,6 +3,11 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes inkBleed {
+  from { box-shadow: 0 0 0 0 rgba(155, 67, 48, 0); }
+  to   { box-shadow: 0 0 0 3px rgba(155, 67, 48, 0.06); }
+}
+
 .container {
   max-width: 520px;
   margin: 0 auto;
@@ -12,36 +17,116 @@
 
 .label {
   display: block;
-  font-size: 0.93rem;
-  color: var(--ink-soft);
-  margin-bottom: var(--space-md);
-  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.06em;
   animation: fadeUp 0.4s ease forwards;
+}
+
+/* ---- Manuscript paper textarea ---- */
+
+.wrapper {
+  position: relative;
+  animation: fadeUp 0.5s ease forwards 0.15s;
 }
 
 .textarea {
   width: 100%;
-  min-height: 84px;
-  padding: var(--space-md);
-  font-size: 0.93rem;
+  min-height: 120px;
+  padding: var(--space-lg) var(--space-lg) var(--space-lg) 2.5rem;
+  font-size: 0.95rem;
   font-family: var(--font-text);
   color: var(--ink);
-  background: var(--bg-silk);
-  border: var(--border);
+  background:
+    /* Vertical guide lines — traditional manuscript paper */
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1.8rem,
+      rgba(31, 27, 22, 0.04) 1.8rem,
+      rgba(31, 27, 22, 0.04) 1.85rem
+    ),
+    var(--bg-silk);
+  border: none;
   resize: vertical;
-  line-height: 1.8;
-  animation: fadeUp 0.5s ease forwards 0.15s;
-  transition: border-color 0.3s;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  transition: box-shadow 0.4s ease, background 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brush-stroke border — uneven, organic */
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(31, 27, 22, 0.13);
+  border-radius: 1px;
+  z-index: 2;
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+
+/* Vermillion accent line on the left */
+.wrapper::after {
+  content: '';
+  position: absolute;
+  left: 0.65rem;
+  top: var(--space-md);
+  bottom: var(--space-md);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(155, 67, 48, 0.18) 5%,
+    rgba(155, 67, 48, 0.18) 95%,
+    transparent
+  );
+  z-index: 2;
+  pointer-events: none;
+  transition: background 0.4s ease;
 }
 
 .textarea::placeholder {
   color: var(--ink-faint);
+  font-style: italic;
+  letter-spacing: 0.04em;
 }
 
 .textarea:focus {
   outline: none;
-  border-color: var(--ink-muted);
 }
+
+.wrapper:focus-within::before {
+  border-color: rgba(155, 67, 48, 0.3);
+  box-shadow:
+    inset 0 0 0 1px rgba(155, 67, 48, 0.04),
+    0 0 0 3px rgba(155, 67, 48, 0.04);
+}
+
+.wrapper:focus-within::after {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(155, 67, 48, 0.3) 5%,
+    rgba(155, 67, 48, 0.3) 95%,
+    transparent
+  );
+}
+
+/* ---- Hint text ---- */
+
+.hint {
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  text-align: right;
+  margin-top: var(--space-xs);
+  letter-spacing: 0.05em;
+}
+
+/* ---- Action ---- */
 
 .action {
   margin-top: var(--space-lg);
