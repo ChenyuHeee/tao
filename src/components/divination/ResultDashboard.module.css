@@ -10,115 +10,116 @@
 }
 
 .dashboard {
-  max-width: 780px;
+  max-width: var(--measure);
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md) var(--space-md);
   animation: fadeUp 0.5s ease forwards;
 }
 
-.question {
+/* ---- Top bar ---- */
+
+.topBar {
   text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.question {
   font-size: 0.85rem;
   color: var(--ink-muted);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   letter-spacing: 0.05em;
 }
 
 .warning {
-  text-align: center;
-  font-size: 0.72rem;
+  display: inline-block;
+  font-size: 0.7rem;
   color: var(--red);
-  margin-bottom: var(--space-lg);
-  padding: 0.35rem 1rem;
+  padding: 0.2rem 0.8rem;
   border: 1px solid rgba(155, 67, 48, 0.12);
   background: var(--red-faded);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   animation: stampIn 0.4s var(--ease-spring) forwards 0.08s;
 }
 
-.grid {
+/* ---- Main layout: hexagrams left, interpretation right ---- */
+
+.main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  margin-bottom: var(--space-lg);
-  border: var(--border);
-  overflow: hidden;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  align-items: start;
 }
 
-@media (max-width: 520px) {
-  .grid {
+@media (max-width: 700px) {
+  .main {
     grid-template-columns: 1fr;
   }
 }
 
-.col {
-  padding: var(--space-lg);
+/* ---- Left panel: hexagrams ---- */
+
+.hexPanel {
+  border: var(--border);
   background: var(--bg-card);
-  animation: fadeUp 0.5s ease forwards;
-  border-right: var(--border);
+  animation: fadeUp 0.5s ease forwards 0.15s;
 }
 
-.col:last-child {
-  border-right: none;
+.hexPair {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
 }
 
-@media (max-width: 520px) {
-  .col {
-    border-right: none;
-    border-bottom: var(--border);
-  }
-  .col:last-child {
-    border-bottom: none;
-  }
-}
-
-.col:first-child { animation-delay: 0.15s; }
-.col:last-child  { animation-delay: 0.3s; }
-
-.colLabel {
+.hexCol {
+  padding: var(--space-md);
   text-align: center;
+}
+
+.hexLabel {
   font-size: 0.68rem;
   color: var(--ink-faint);
-  letter-spacing: 0.14em;
-  margin-bottom: var(--space-sm);
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-xs);
+}
+
+.arrow {
+  font-size: 1.1rem;
+  color: var(--red);
+  padding: 0 0.25rem;
+  animation: fadeUp 0.3s ease forwards 0.5s;
+  align-self: center;
 }
 
 .stableNote {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--ink-muted);
-  padding: var(--space-xl) 0;
-  letter-spacing: 0.05em;
+  padding: var(--space-lg) 0;
 }
 
-.arrow {
-  grid-column: 1 / -1;
+/* ---- Right panel: interpretation ---- */
+
+.interpPanel {
+  animation: fadeUp 0.5s ease forwards 0.3s;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+/* ---- Bottom bar ---- */
+
+.bottomBar {
   text-align: center;
-  padding: 0;
-  margin: -0.35rem 0;
-  animation: fadeUp 0.35s ease forwards 0.5s;
-}
-
-.arrow span {
-  font-size: 1.2rem;
-  color: var(--red);
-}
-
-.interp {
-  animation: fadeUp 0.5s ease forwards 0.7s;
+  animation: fadeUp 0.4s ease forwards 0.8s;
 }
 
 .warningBottom {
-  text-align: center;
   font-size: 0.7rem;
   color: var(--ink-faint);
-  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
   letter-spacing: 0.05em;
-  animation: fadeUp 0.4s ease forwards 1s;
 }
 
 .actions {
-  text-align: center;
-  margin-top: var(--space-xl);
-  animation: fadeUp 0.4s ease forwards 1.2s;
+  margin-bottom: var(--space-sm);
 }
