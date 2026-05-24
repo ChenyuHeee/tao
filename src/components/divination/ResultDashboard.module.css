@@ -124,6 +124,15 @@
   letter-spacing: 0.05em;
 }
 
+.reminder {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  animation: fadeUp 0.35s ease forwards;
+}
+
 .actions {
   margin-bottom: var(--space-sm);
 }

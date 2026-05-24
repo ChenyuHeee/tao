@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { DivinationState } from '../../types';
 import { HexagramDiagram } from '../hexagram/HexagramDiagram';
 import { HexagramInfo } from '../hexagram/HexagramInfo';
@@ -12,10 +13,19 @@ interface ResultDashboardProps {
 
 export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
   const { question, benGua, zhiGua, changingLineIndices, interpretation } = state;
+  const [confirmReset, setConfirmReset] = useState(false);
 
   if (!benGua || !zhiGua || !interpretation) return null;
 
   const hasChange = changingLineIndices.length > 0;
+
+  function handleReset() {
+    if (confirmReset) {
+      onReset();
+    } else {
+      setConfirmReset(true);
+    }
+  }
 
   return (
     <div className={styles.dashboard}>
@@ -71,9 +81,16 @@ export function ResultDashboard({ state, onReset }: ResultDashboardProps) {
         <p className={styles.warningBottom}>
           以上内容为《易经》卦爻辞的自动化解读，仅供传统文化交流及休闲娱乐参考
         </p>
+
+        {confirmReset && (
+          <p className={styles.reminder}>
+            传统上认为，对同一件事短期内不宜反复推演。卦为心镜，照见当下即是。若确要重来，请再点一次。
+          </p>
+        )}
+
         <div className={styles.actions}>
-          <InkButton variant="secondary" onClick={onReset}>
-            重新推演
+          <InkButton variant="secondary" onClick={handleReset}>
+            {confirmReset ? '确要认真重来' : '重新推演'}
           </InkButton>
         </div>
       </div>
