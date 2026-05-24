@@ -1,7 +1,5 @@
 .card {
-  border: var(--border);
   padding: var(--space-md);
-  background: var(--bg-card);
 }
 
 .rule {

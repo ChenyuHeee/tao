@@ -48,7 +48,6 @@
   grid-template-columns: 1fr 1.1fr;
   gap: var(--space-md);
   margin-bottom: var(--space-md);
-  align-items: start;
 }
 
 @media (max-width: 700px) {
@@ -63,12 +62,15 @@
   border: var(--border);
   background: var(--bg-card);
   animation: fadeUp 0.5s ease forwards 0.15s;
+  display: flex;
+  align-items: center;
 }
 
 .hexPair {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  width: 100%;
 }
 
 .hexCol {
@@ -101,6 +103,8 @@
 /* ---- Right panel: interpretation ---- */
 
 .interpPanel {
+  border: var(--border);
+  background: var(--bg-card);
   animation: fadeUp 0.5s ease forwards 0.3s;
   max-height: calc(100vh - 180px);
   overflow-y: auto;
