@@ -13,6 +13,7 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '六爻不变 · 参考本卦卦辞',
         primaryText: benGua.guaCi,
+        primaryTranslation: benGua.guaCiTranslation || '',
         primarySource: `${benGua.fullName}（第${benGua.kingWenNumber}卦）卦辞`,
       };
 
@@ -22,6 +23,7 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '一处变爻 · 参考本卦变爻爻辞',
         primaryText: line.yaoCi,
+        primaryTranslation: line.translation || '',
         primarySource: `${benGua.fullName}·${line.name}`,
       };
     }
@@ -32,8 +34,10 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '两处变爻 · 参考本卦两变爻爻辞（上爻为主）',
         primaryText: benGua.lines[upper].yaoCi,
+        primaryTranslation: benGua.lines[upper].translation || '',
         primarySource: `${benGua.fullName}·${benGua.lines[upper].name}（主）`,
         secondaryText: benGua.lines[lower].yaoCi,
+        secondaryTranslation: benGua.lines[lower].translation || '',
         secondarySource: `${benGua.fullName}·${benGua.lines[lower].name}（辅）`,
       };
     }
@@ -42,8 +46,10 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '三处变爻 · 参考本卦与之卦卦辞（本卦为主）',
         primaryText: benGua.guaCi,
+        primaryTranslation: benGua.guaCiTranslation || '',
         primarySource: `${benGua.fullName}卦辞（主）`,
         secondaryText: zhiGua.guaCi,
+        secondaryTranslation: zhiGua.guaCiTranslation || '',
         secondarySource: `${zhiGua.fullName}卦辞（辅）`,
       };
 
@@ -54,8 +60,10 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '四处变爻 · 参考之卦二不变爻爻辞（下爻为主）',
         primaryText: zhiGua.lines[lower].yaoCi,
+        primaryTranslation: zhiGua.lines[lower].translation || '',
         primarySource: `${zhiGua.fullName}·${zhiGua.lines[lower].name}（主）`,
         secondaryText: zhiGua.lines[upper].yaoCi,
+        secondaryTranslation: zhiGua.lines[upper].translation || '',
         secondarySource: `${zhiGua.fullName}·${zhiGua.lines[upper].name}（辅）`,
       };
     }
@@ -66,6 +74,7 @@ export function applyZhuXiRule(
       return {
         ruleLabel: '五处变爻 · 参考之卦不变爻爻辞',
         primaryText: line.yaoCi,
+        primaryTranslation: line.translation || '',
         primarySource: `${zhiGua.fullName}·${line.name}`,
       };
     }
@@ -75,6 +84,7 @@ export function applyZhuXiRule(
         return {
           ruleLabel: '六爻皆变（乾卦）· 参考「用九」',
           primaryText: YONG_JIU.yaoCi,
+          primaryTranslation: YONG_JIU.translation || '',
           primarySource: '乾卦·用九',
         };
       }
@@ -82,12 +92,14 @@ export function applyZhuXiRule(
         return {
           ruleLabel: '六爻皆变（坤卦）· 参考「用六」',
           primaryText: YONG_LIU.yaoCi,
+          primaryTranslation: YONG_LIU.translation || '',
           primarySource: '坤卦·用六',
         };
       }
       return {
         ruleLabel: '六爻皆变 · 参考之卦卦辞',
         primaryText: zhiGua.guaCi,
+        primaryTranslation: zhiGua.guaCiTranslation || '',
         primarySource: `${zhiGua.fullName}卦辞`,
       };
 

@@ -26,7 +26,9 @@ export interface DivinationState {
 export interface InterpretationResult {
   ruleLabel: string;
   primaryText: string;
+  primaryTranslation: string;
   primarySource: string;
   secondaryText?: string;
+  secondaryTranslation?: string;
   secondarySource?: string;
 }
