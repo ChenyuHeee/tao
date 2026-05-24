@@ -17,20 +17,7 @@ body {
   line-height: 1.75;
   color: var(--ink-soft);
   min-height: 100vh;
-  background-color: var(--bg-silk);
-  background-image:
-    /* Warm parchment patina — upper left */
-    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(180, 150, 110, 0.55) 0%, transparent 65%),
-    /* Cool ink wash — upper right */
-    radial-gradient(ellipse 500px 350px at 80% 5%, rgba(31, 27, 22, 0.28) 0%, transparent 65%),
-    /* Deep ink stain — mid left */
-    radial-gradient(ellipse 300px 250px at 10% 55%, rgba(31, 27, 22, 0.22) 0%, transparent 65%),
-    /* Warm wash — lower right */
-    radial-gradient(ellipse 450px 300px at 85% 75%, rgba(160, 140, 110, 0.35) 0%, transparent 60%),
-    /* Faint ink drop — center */
-    radial-gradient(circle 200px at 55% 40%, rgba(31, 27, 22, 0.16) 0%, transparent 55%),
-    /* Ink bloom — lower center */
-    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.14) 0%, transparent 50%),
+  background:
     /* ---- Mountains at the bottom ---- */
     /* Far left peak */
     radial-gradient(ellipse 120% 160px at 15% 100%, rgba(31, 27, 22, 0.28) 0%, transparent 55%),
@@ -43,7 +30,20 @@ body {
     /* Near right hill */
     radial-gradient(ellipse 80% 90px at 65% 100%, rgba(31, 27, 22, 0.30) 0%, transparent 48%),
     /* Mist veil over mountains */
-    linear-gradient(to top, rgba(242, 237, 226, 0.65) 0%, transparent 30%);
+    linear-gradient(to top, rgba(242, 237, 226, 0.65) 0%, transparent 30%),
+    /* Warm parchment patina — upper left */
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(180, 150, 110, 0.55) 0%, transparent 65%),
+    /* Cool ink wash — upper right */
+    radial-gradient(ellipse 500px 350px at 80% 5%, rgba(31, 27, 22, 0.28) 0%, transparent 65%),
+    /* Deep ink stain — mid left */
+    radial-gradient(ellipse 300px 250px at 10% 55%, rgba(31, 27, 22, 0.22) 0%, transparent 65%),
+    /* Warm wash — lower right */
+    radial-gradient(ellipse 450px 300px at 85% 75%, rgba(160, 140, 110, 0.35) 0%, transparent 60%),
+    /* Faint ink drop — center */
+    radial-gradient(circle 200px at 55% 40%, rgba(31, 27, 22, 0.16) 0%, transparent 55%),
+    /* Ink bloom — lower center */
+    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.14) 0%, transparent 50%),
+    var(--bg-silk);
   background-attachment: fixed;
 }
 
