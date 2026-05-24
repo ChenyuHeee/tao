@@ -16,22 +16,8 @@ body {
   font-family: var(--font-text);
   line-height: 1.75;
   color: var(--ink-soft);
-  background: var(--bg-silk);
   min-height: 100vh;
-  position: relative;
-}
-
-/*
- * Silk texture + ink-wash splashes
- * Multiple layers of radial gradients create the look of diluted
- * ink dripped onto raw silk over centuries of handling.
- */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+  background-color: var(--bg-silk);
   background-image:
     /* Silk weave — horizontal threads */
     repeating-linear-gradient(
@@ -59,31 +45,22 @@ body::before {
     radial-gradient(ellipse 450px 300px at 85% 75%, rgba(160, 140, 110, 0.15) 0%, transparent 65%),
     /* Faint ink drop — center */
     radial-gradient(circle 200px at 55% 40%, rgba(31, 27, 22, 0.06) 0%, transparent 60%),
-    /* Another ink bloom — lower center */
-    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.05) 0%, transparent 55%);
-}
-
-/*
- * Distant mountain silhouette at the bottom
- * Built from overlapping soft ellipses to create a misty,
- * layered mountain range reminiscent of Song dynasty landscape painting.
- */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    /* Far layer — soft, distant peaks */
-    radial-gradient(ellipse 120% 180px at 15% 100%, rgba(31, 27, 22, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 90% 140px at 55% 100%, rgba(31, 27, 22, 0.09) 0%, transparent 55%),
-    radial-gradient(ellipse 100% 150px at 85% 100%, rgba(31, 27, 22, 0.10) 0%, transparent 58%),
-    /* Near layer — slightly darker, overlapping hills */
-    radial-gradient(ellipse 70% 100px at 30% 100%, rgba(31, 27, 22, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 110px at 65% 100%, rgba(31, 27, 22, 0.12) 0%, transparent 52%),
-    /* Mist layer — soft horizontal haze */
-    linear-gradient(to top, rgba(242, 237, 226, 0.6) 0%, transparent 40%);
+    /* Ink bloom — lower center */
+    radial-gradient(circle 150px at 45% 85%, rgba(31, 27, 22, 0.05) 0%, transparent 55%),
+    /* ---- Mountains at the bottom ---- */
+    /* Far left peak */
+    radial-gradient(ellipse 120% 160px at 15% 100%, rgba(31, 27, 22, 0.10) 0%, transparent 60%),
+    /* Far center peak */
+    radial-gradient(ellipse 90% 120px at 50% 100%, rgba(31, 27, 22, 0.07) 0%, transparent 55%),
+    /* Far right peak */
+    radial-gradient(ellipse 100% 130px at 85% 100%, rgba(31, 27, 22, 0.08) 0%, transparent 58%),
+    /* Near left hill */
+    radial-gradient(ellipse 70% 80px at 30% 100%, rgba(31, 27, 22, 0.13) 0%, transparent 50%),
+    /* Near right hill */
+    radial-gradient(ellipse 80% 90px at 65% 100%, rgba(31, 27, 22, 0.10) 0%, transparent 52%),
+    /* Mist veil over mountains */
+    linear-gradient(to top, rgba(242, 237, 226, 0.55) 0%, transparent 35%);
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4 {
