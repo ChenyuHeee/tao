@@ -20,29 +20,33 @@
   padding: var(--space-sm) 0;
 }
 
-.translation {
+/* Classical text — always visible, authoritative */
+.classical {
   font-size: 1.05rem;
-  line-height: 1.9;
+  line-height: 2;
   color: var(--ink);
   text-align: center;
-  padding: var(--space-xs) 0;
+  padding: var(--space-sm) 0 0;
 }
 
-/* ---- Secondary block ---- */
-
-.secondaryBlock {
-  padding: var(--space-sm) 0;
-}
-
-.translationSmall {
-  font-size: 0.92rem;
-  line-height: 1.85;
+.classicalSmall {
+  font-size: 0.9rem;
+  line-height: 1.9;
   color: var(--ink-soft);
   text-align: center;
-  padding: var(--space-xs) 0;
+  padding: var(--space-sm) 0 0;
 }
 
-/* ---- Collapsible classical text ---- */
+/* Source label */
+.src {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  text-align: center;
+  margin-top: var(--space-xs);
+  letter-spacing: 0.04em;
+}
+
+/* ---- Collapsible translation ---- */
 
 .details {
   margin-top: var(--space-md);
@@ -51,12 +55,12 @@
 
 .summary {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink-faint);
   cursor: pointer;
   letter-spacing: 0.06em;
   padding: 0.15rem 0;
-  border-bottom: 1px dashed rgba(31, 27, 22, 0.15);
+  border-bottom: 1px dashed rgba(31, 27, 22, 0.12);
   user-select: none;
   transition: color 0.2s;
 }
@@ -65,28 +69,26 @@
   color: var(--ink-muted);
 }
 
-.classical {
-  font-size: 0.95rem;
-  line-height: 1.9;
-  color: var(--ink-muted);
-  text-align: center;
-  padding: var(--space-sm) 0 0;
-}
-
-.classicalSmall {
-  font-size: 0.85rem;
+.translation {
+  font-size: 0.88rem;
   line-height: 1.85;
   color: var(--ink-muted);
   text-align: center;
   padding: var(--space-sm) 0 0;
 }
 
-.src {
-  font-size: 0.72rem;
-  color: var(--ink-faint);
+.translationSmall {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--ink-muted);
   text-align: center;
-  margin-top: var(--space-xs);
-  letter-spacing: 0.04em;
+  padding: var(--space-sm) 0 0;
+}
+
+/* ---- Secondary block ---- */
+
+.secondaryBlock {
+  padding: var(--space-sm) 0;
 }
 
 /* ---- Divider ---- */

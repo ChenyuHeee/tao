@@ -21,23 +21,25 @@ function Block({
 
   return (
     <div className={isSecondary ? styles.secondaryBlock : styles.primaryBlock}>
-      {/* Plain-language translation — always visible */}
-      <p className={isSecondary ? styles.translationSmall : styles.translation}>
-        {translation || text}
-      </p>
+      {/* Classical text — always visible */}
+      <p className={isSecondary ? styles.classicalSmall : styles.classical}>{text}</p>
+      <p className={styles.src}>{source}</p>
 
-      {/* Classical text — collapsible */}
-      <details
-        className={styles.details}
-        open={open}
-        onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}
-      >
-        <summary className={styles.summary}>
-          {open ? '收起原文' : '查看古文原文'}
-        </summary>
-        <p className={isSecondary ? styles.classicalSmall : styles.classical}>{text}</p>
-        <p className={styles.src}>{source}</p>
-      </details>
+      {/* Modern translation — collapsible */}
+      {translation && translation !== text && (
+        <details
+          className={styles.details}
+          open={open}
+          onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}
+        >
+          <summary className={styles.summary}>
+            {open ? '收起白话' : '查看白话翻译'}
+          </summary>
+          <p className={isSecondary ? styles.translationSmall : styles.translation}>
+            {translation}
+          </p>
+        </details>
+      )}
     </div>
   );
 }
